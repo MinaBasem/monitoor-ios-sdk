@@ -108,7 +108,7 @@ final class CrashCapture {
         let reason        = exception?.reason ?? signalReason(signal)
 
         var crashFrames: [[String: String]] = []
-        for i in 0..<frameCount {
+        for i in 0..<Int(frameCount) {
             guard let ptr = frames[i] else { continue }
             crashFrames.append([
                 "index":   "\(i)",
